@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # E-commerce Trend Analysis Platform
 
 ## Key Components
