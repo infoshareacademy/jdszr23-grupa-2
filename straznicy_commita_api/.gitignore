@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+*.env
+.env.*
+backend/.venv/
+.venv/
+.DS_Store
+node_modules/
+*.log
+*.sqlite3
+
+# Docker
+docker-compose.override.yml
+
+# Pytest
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# MLflow
+/mlruns/
+
+# IDE
+.vscode/

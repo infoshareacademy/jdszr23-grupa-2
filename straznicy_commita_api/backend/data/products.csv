@@ -1,0 +1,4 @@
+product_name,price_min,price_max,sales,views,days_listed
+Sample Product A,10.0,15.0,120,2000,30
+Sample Product B,25.0,35.0,80,1500,45
+Sample Product C,5.0,8.0,200,4000,15
