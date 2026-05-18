@@ -1,5 +1,9 @@
-<<<<<<< HEAD
 # E-commerce Trend Analysis Platform
+
+## Local setup
+
+- Use a dedicated Python virtual environment or conda env to avoid global package conflicts.
+- Install backend dependencies with `python -m pip install -r requirements.txt`.
 
 ## Key Components
 

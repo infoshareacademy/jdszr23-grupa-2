@@ -2,7 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from pydantic import BaseSettings, Field
+from pydantic_settings import BaseSettings
+from pydantic import Field
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -18,10 +19,15 @@ class AppSettings(BaseSettings):
     data_path: Path = Field(default=BASE_DIR / "data" / "products.csv")
     mlflow_tracking_uri: str = Field(default="http://localhost:5000")
     log_level: str = Field(default="INFO")
+    cors_origins: list[str] = Field(default_factory=lambda: [
+        "http://localhost:4200",
+        "http://127.0.0.1:4200",
+    ])
 
-    class Config:
-        env_file = ".env"
-        case_sensitive = True
+    model_config = {
+        "env_file": ".env",
+        "case_sensitive": True,
+    }
 
 
 settings = AppSettings()
