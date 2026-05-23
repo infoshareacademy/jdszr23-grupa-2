@@ -22,13 +22,17 @@ def _load_model():
     return _model
 
 
-def predict_product(fit: str, sleeve: str) -> dict[str, object]:
+from backend.app.ml.model import normalize_brand
+
+
+def predict_product(fit: str, sleeve: str, marka: str) -> dict[str, object]:
     canonical_fit = normalize_fit(fit)
     canonical_sleeve = normalize_sleeve(sleeve)
+    canonical_brand = normalize_brand(marka)
     model = _load_model()
 
     sample = pd.DataFrame(
-        [{"fit": canonical_fit, "sleeve": canonical_sleeve}]
+        [{"fit": canonical_fit, "sleeve": canonical_sleeve, "brand": canonical_brand}]
     )
     segment = model.predict(sample)[0]
     probabilities = model.predict_proba(sample)[0]
